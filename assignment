@@ -1,0 +1,173 @@
+class Complex {
+private:
+    int a; // Real part
+    int b; // Imaginary part
+
+public:
+    void setData(int real, int imag) {
+        a = real;
+        b = imag;
+    }
+
+    void showData() {
+        cout << a << " + " << b << "i" << endl;
+    }
+
+    Complex add(Complex other) {
+        Complex result;
+        result.a = a + other.a;
+        result.b = b + other.b;
+        return result;
+    }
+};
+Time Class:
+
+class Time {
+private:
+    int h; // Hours
+    int m; // Minutes
+    int s; // Seconds
+
+public:
+    void setTime(int hours, int minutes, int seconds) {
+        h = hours;
+        m = minutes;
+        s = seconds;
+    }
+
+    void showTime() {
+        cout << h << ":" << m << ":" << s << endl;
+    }
+
+    void normalize() {
+        // Normalize seconds and minutes
+        if (s >= 60) {
+            m += s / 60;
+            s %= 60;
+        }
+        if (m >= 60) {
+            h += m / 60;
+            m %= 60;
+        }
+    }
+
+    Time add(Time other) {
+        Time result;
+        result.s = s + other.s;
+        result.m = m + other.m;
+        result.h = h + other.h;
+        result.normalize(); // Normalize the result time
+        return result;
+    }
+};
+Cube Class:
+
+class Cube {
+private:
+    double sideLength;
+
+public:
+    Cube(double length) {
+        sideLength = length;
+    }
+
+    double calculateVolume() {
+        return sideLength * sideLength * sideLength;
+    }
+};
+Counter Class:
+
+class Counter {
+private:
+    static int count;
+
+public:
+    Counter() {
+        count++;
+    }
+
+    static int getCount() {
+        return count;
+    }
+};
+
+int Counter::count = 0;
+Date Class:
+
+class Date {
+private:
+    int day;
+    int month;
+    int year;
+
+public:
+    Date(int d, int m, int y) {
+        day = d;
+        month = m;
+        year = y;
+    }
+
+    void displayDate() {
+        cout << day << "/" << month << "/" << year << endl;
+    }
+};
+Student Class:
+
+class Student {
+private:
+    string name;
+    int age;
+
+public:
+    Student(string n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void displayDetails() {
+        cout << "Name: " << name << endl;
+        cout << "Age: " << age << endl;
+    }
+};
+Box Class:
+
+class Box {
+private:
+    double length;
+    double breadth;
+    double height;
+
+public:
+    Box(double l, double b, double h) {
+        length = l;
+        breadth = b;
+        height = h;
+    }
+
+    double calculateVolume() {
+        return length * breadth * height;
+    }
+};
+Bank Class:
+
+class Bank {
+private:
+    double principal;
+    double rate;
+    double years;
+
+public:
+    Bank(double p, double r, double y) {
+        principal = p;
+        rate = r;
+        years = y;
+    }
+
+    double calculateSimpleInterest() {
+        return (principal * rate * years) / 100;
+    }
+
+    void displayInterest() {
+        cout << "Simple Interest: " << calculateSimpleInterest() << endl;
+    }
+};
